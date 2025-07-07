@@ -2,41 +2,72 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* ChickStage360 Agricultural Design System - All colors MUST be HSL */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Agricultural Color Palette */
+    --background: 45 25% 97%;
+    --foreground: 120 15% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 120 15% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 120 15% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary: Farm Green */
+    --primary: 120 45% 35%;
+    --primary-foreground: 0 0% 98%;
+    --primary-glow: 120 55% 45%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary: Golden Wheat */
+    --secondary: 45 85% 75%;
+    --secondary-foreground: 120 15% 15%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted: Soft Earth */
+    --muted: 45 20% 92%;
+    --muted-foreground: 120 10% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent: Vibrant Green */
+    --accent: 120 60% 50%;
+    --accent-foreground: 0 0% 98%;
+
+    /* Earth Brown */
+    --earth: 30 25% 45%;
+    --earth-foreground: 0 0% 98%;
+
+    /* Success: Fresh Green */
+    --success: 120 65% 40%;
+    --success-foreground: 0 0% 98%;
+
+    /* Warning: Golden Yellow */
+    --warning: 45 100% 60%;
+    --warning-foreground: 120 15% 15%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 120 15% 85%;
+    --input: 120 15% 92%;
+    --ring: 120 45% 35%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+
+    /* Agricultural Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-earth: linear-gradient(135deg, hsl(var(--earth)), hsl(30 35% 55%));
+    --gradient-field: linear-gradient(180deg, hsl(120 40% 85%), hsl(120 50% 75%));
+    --gradient-sunset: linear-gradient(135deg, hsl(45 100% 70%), hsl(30 90% 65%));
+
+    /* Shadows */
+    --shadow-farm: 0 4px 20px -2px hsl(var(--primary) / 0.15);
+    --shadow-earth: 0 8px 30px -5px hsl(var(--earth) / 0.2);
+    --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.3);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --sidebar-background: 0 0% 98%;
 
@@ -56,41 +87,38 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Dark mode agricultural theme */
+    --background: 120 15% 8%;
+    --foreground: 45 25% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 120 15% 10%;
+    --card-foreground: 45 25% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --primary: 120 55% 45%;
+    --primary-foreground: 120 15% 8%;
+    --primary-glow: 120 65% 55%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 45 65% 25%;
+    --secondary-foreground: 45 25% 95%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --muted: 120 10% 15%;
+    --muted-foreground: 120 5% 65%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 120 70% 55%;
+    --accent-foreground: 120 15% 8%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --earth: 30 35% 25%;
+    --earth-foreground: 45 25% 95%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --success: 120 75% 50%;
+    --success-foreground: 120 15% 8%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --warning: 45 100% 70%;
+    --warning-foreground: 120 15% 8%;
+
+    --border: 120 10% 20%;
+    --input: 120 10% 18%;
+    --ring: 120 55% 45%;
   }
 }
 
@@ -100,6 +128,113 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+    background-image: radial-gradient(circle at 1px 1px, hsl(var(--primary) / 0.05) 1px, transparent 0);
+    background-size: 20px 20px;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Agricultural Component Styles */
+  .farm-gradient {
+    background: var(--gradient-primary);
+  }
+
+  .earth-gradient {
+    background: var(--gradient-earth);
+  }
+
+  .field-gradient {
+    background: var(--gradient-field);
+  }
+
+  .sunset-gradient {
+    background: var(--gradient-sunset);
+  }
+
+  .farm-shadow {
+    box-shadow: var(--shadow-farm);
+  }
+
+  .earth-shadow {
+    box-shadow: var(--shadow-earth);
+  }
+
+  .glow-shadow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .transition-farm {
+    transition: var(--transition-smooth);
+  }
+
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+
+  /* Chick Growth Animation */
+  .chick-grow {
+    animation: chick-grow 2s ease-in-out infinite;
+  }
+
+  @keyframes chick-grow {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+  }
+
+  /* Farm Elements */
+  .barn-shape {
+    clip-path: polygon(0 100%, 0 50%, 20% 20%, 50% 0, 80% 20%, 100% 50%, 100% 100%);
+  }
+
+  .egg-shape {
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  }
+
+  /* Hover Effects */
+  .hover-lift {
+    @apply transition-farm hover:translate-y-[-2px] hover:shadow-md;
+  }
+
+  .hover-glow {
+    @apply transition-farm hover:shadow-[0_0_20px_hsl(var(--primary-glow)/0.4)];
+  }
+
+  .hover-earth {
+    @apply transition-farm hover:bg-earth hover:text-earth-foreground;
+  }
+
+  /* Status Indicators */
+  .status-healthy {
+    @apply bg-success text-success-foreground;
+  }
+
+  .status-warning {
+    @apply bg-warning text-warning-foreground;
+  }
+
+  .status-growing {
+    @apply bg-accent text-accent-foreground;
+  }
+
+  /* Custom Scrollbar */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-muted rounded-full;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-primary rounded-full;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary-glow;
   }
 }
