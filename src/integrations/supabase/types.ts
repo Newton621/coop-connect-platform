@@ -14,7 +14,243 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      courses: {
+        Row: {
+          content: string | null
+          created_at: string
+          description: string | null
+          difficulty_level: string | null
+          duration: string | null
+          id: string
+          title: string
+          type: string
+          updated_at: string
+        }
+        Insert: {
+          content?: string | null
+          created_at?: string
+          description?: string | null
+          difficulty_level?: string | null
+          duration?: string | null
+          id?: string
+          title: string
+          type: string
+          updated_at?: string
+        }
+        Update: {
+          content?: string | null
+          created_at?: string
+          description?: string | null
+          difficulty_level?: string | null
+          duration?: string | null
+          id?: string
+          title?: string
+          type?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      interviews: {
+        Row: {
+          created_at: string
+          description: string | null
+          experience_years: number | null
+          farm_location: string | null
+          farmer_name: string
+          id: string
+          interview_date: string | null
+          specialty: string | null
+          title: string
+          updated_at: string
+          video_url: string | null
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          experience_years?: number | null
+          farm_location?: string | null
+          farmer_name: string
+          id?: string
+          interview_date?: string | null
+          specialty?: string | null
+          title: string
+          updated_at?: string
+          video_url?: string | null
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          experience_years?: number | null
+          farm_location?: string | null
+          farmer_name?: string
+          id?: string
+          interview_date?: string | null
+          specialty?: string | null
+          title?: string
+          updated_at?: string
+          video_url?: string | null
+        }
+        Relationships: []
+      }
+      lifecycle_records: {
+        Row: {
+          batch_name: string
+          breed: string | null
+          created_at: string
+          current_stage: string
+          id: string
+          notes: string | null
+          quantity: number
+          start_date: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          batch_name: string
+          breed?: string | null
+          created_at?: string
+          current_stage?: string
+          id?: string
+          notes?: string | null
+          quantity?: number
+          start_date: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          batch_name?: string
+          breed?: string | null
+          created_at?: string
+          current_stage?: string
+          id?: string
+          notes?: string | null
+          quantity?: number
+          start_date?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      livestreams: {
+        Row: {
+          created_at: string
+          description: string | null
+          host_id: string
+          id: string
+          scheduled_time: string | null
+          status: string | null
+          stream_url: string | null
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          host_id: string
+          id?: string
+          scheduled_time?: string | null
+          status?: string | null
+          stream_url?: string | null
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          host_id?: string
+          id?: string
+          scheduled_time?: string | null
+          status?: string | null
+          stream_url?: string | null
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      marketplace_items: {
+        Row: {
+          category: string
+          contact_info: string | null
+          created_at: string
+          currency: string | null
+          description: string | null
+          id: string
+          image_url: string | null
+          location: string | null
+          price: number | null
+          seller_id: string
+          status: string | null
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          category: string
+          contact_info?: string | null
+          created_at?: string
+          currency?: string | null
+          description?: string | null
+          id?: string
+          image_url?: string | null
+          location?: string | null
+          price?: number | null
+          seller_id: string
+          status?: string | null
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          category?: string
+          contact_info?: string | null
+          created_at?: string
+          currency?: string | null
+          description?: string | null
+          id?: string
+          image_url?: string | null
+          location?: string | null
+          price?: number | null
+          seller_id?: string
+          status?: string | null
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          created_at: string
+          experience_level: string | null
+          farm_location: string | null
+          farm_size: string | null
+          full_name: string | null
+          id: string
+          phone: string | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          experience_level?: string | null
+          farm_location?: string | null
+          farm_size?: string | null
+          full_name?: string | null
+          id?: string
+          phone?: string | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          experience_level?: string | null
+          farm_location?: string | null
+          farm_size?: string | null
+          full_name?: string | null
+          id?: string
+          phone?: string | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

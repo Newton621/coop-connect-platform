@@ -10,6 +10,7 @@ import Livestream from "./pages/Livestream";
 import Learning from "./pages/Learning";
 import Interviews from "./pages/Interviews";
 import Auth from "./pages/Auth";
+import Admin from "./pages/Admin";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -28,6 +29,7 @@ const App = () => (
           <Route path="/learning" element={<Learning />} />
           <Route path="/interviews" element={<Interviews />} />
           <Route path="/auth" element={<Auth />} />
+          <Route path="/admin" element={<Admin />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
